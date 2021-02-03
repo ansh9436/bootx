@@ -1,0 +1,33 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-1775b4a102d-771d28d56fc28769": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "homeworld",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "homeworld",
+				"url": "jdbc:mysql://localhost:3306/homeworld",
+				"home": "/usr/local/Cellar/mysql-client@5.7/5.7.29",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
