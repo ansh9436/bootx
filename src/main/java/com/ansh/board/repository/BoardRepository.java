@@ -7,5 +7,4 @@ import com.ansh.board.model.BoardVO;
 
 @RepositoryRestResource(collectionResourceRel = "board", path = "board")
 public interface BoardRepository extends JpaRepository<BoardVO, Long> {
-
 }
