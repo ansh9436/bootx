@@ -1,0 +1,133 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.springframework.boot",
+    "module": "spring-boot-starter-data-rest",
+    "version": "2.4.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "xiu4wbhcdnfo3k3sp26u3m4ssa"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-web",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.springframework.data",
+          "module": "spring-data-rest-webmvc",
+          "version": {
+            "requires": "3.4.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-boot-starter-data-rest-2.4.2.jar",
+          "url": "spring-boot-starter-data-rest-2.4.2.jar",
+          "size": 4771,
+          "sha512": "89cc326d21cc53c759e6ce2d1c30d30b8571812e542ea8f8cdd4c0add54ff8ef04408b58e0ae73faed69ec45154a7f6a648e36327445096a7e65b7932ec6ae7e",
+          "sha256": "93267656725c346f5c70fef82cfdd17137d2e0f67615c2e445be93121cfa8d7f",
+          "sha1": "5dd0d83fdddb3b07c511e33d8ba8e8049842a436",
+          "md5": "126eb53fd11da43be9a769a84a16fbc6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-web",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.springframework.data",
+          "module": "spring-data-rest-webmvc",
+          "version": {
+            "requires": "3.4.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-boot-starter-data-rest-2.4.2.jar",
+          "url": "spring-boot-starter-data-rest-2.4.2.jar",
+          "size": 4771,
+          "sha512": "89cc326d21cc53c759e6ce2d1c30d30b8571812e542ea8f8cdd4c0add54ff8ef04408b58e0ae73faed69ec45154a7f6a648e36327445096a7e65b7932ec6ae7e",
+          "sha256": "93267656725c346f5c70fef82cfdd17137d2e0f67615c2e445be93121cfa8d7f",
+          "sha1": "5dd0d83fdddb3b07c511e33d8ba8e8049842a436",
+          "md5": "126eb53fd11da43be9a769a84a16fbc6"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "spring-boot-starter-data-rest-2.4.2-javadoc.jar",
+          "url": "spring-boot-starter-data-rest-2.4.2-javadoc.jar",
+          "size": 4749,
+          "sha512": "2efd835f1ac495acc883b921316ad0efa20d12943923b2b23663d3dba605a2ca800484225b10b5d95df77271289a645ef4c0f7a7c496fe513ffcb4b77717f618",
+          "sha256": "166095468506afede99be38761b1db3cc79bfb2f721fa88532cbcbd0cc692cf0",
+          "sha1": "bd66018eb9b7a8976216b178aba988f7ba1bc35e",
+          "md5": "c3003139be263548d213412fc1939a82"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "spring-boot-starter-data-rest-2.4.2-sources.jar",
+          "url": "spring-boot-starter-data-rest-2.4.2-sources.jar",
+          "size": 4747,
+          "sha512": "9330b860197e365db06c3eaa5faa2288eafa2af7217c903c7d84ff86dd06da38ce935dc2866bce13d2b9bdb400585a0ee3f113d5ba1a50df1bba308b8b3efcaa",
+          "sha256": "27cf6dec36b15975e34b051ef7943592f4905e6a56db66aced093ed43d75f651",
+          "sha1": "be7da979521762065f2a1e86486939edb9e792c1",
+          "md5": "9d77d8d03f62dbb27e2ddade52eb2069"
+        }
+      ]
+    }
+  ]
+}
