@@ -1,0 +1,133 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.springframework.boot",
+    "module": "spring-boot-devtools",
+    "version": "2.4.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "xiu4wbhcdnfo3k3sp26u3m4ssa"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-autoconfigure",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-boot-devtools-2.4.2.jar",
+          "url": "spring-boot-devtools-2.4.2.jar",
+          "size": 227007,
+          "sha512": "8154448a64d7947b51e3ce961967b3c890bd29c922178509c75ecee096fc802e014f518e9d11b0c3c67cd346f59bca6e7f3e8547e8918fcbfd68e2ae404ba59b",
+          "sha256": "9942c77df4a1b86dacb9b5913df6f160a9fb71e21e8fae485906f7a36814cc7b",
+          "sha1": "ec2d5d1d6684d1e817db60e4066e8b6581defeae",
+          "md5": "d2db5cd0757c429edf621b1e222328bb"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-autoconfigure",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "spring-boot-devtools-2.4.2.jar",
+          "url": "spring-boot-devtools-2.4.2.jar",
+          "size": 227007,
+          "sha512": "8154448a64d7947b51e3ce961967b3c890bd29c922178509c75ecee096fc802e014f518e9d11b0c3c67cd346f59bca6e7f3e8547e8918fcbfd68e2ae404ba59b",
+          "sha256": "9942c77df4a1b86dacb9b5913df6f160a9fb71e21e8fae485906f7a36814cc7b",
+          "sha1": "ec2d5d1d6684d1e817db60e4066e8b6581defeae",
+          "md5": "d2db5cd0757c429edf621b1e222328bb"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "spring-boot-devtools-2.4.2-javadoc.jar",
+          "url": "spring-boot-devtools-2.4.2-javadoc.jar",
+          "size": 335039,
+          "sha512": "dcd35e203b2d76a607f5d950283f967a33a11c6134cc84318ca5eca0aade3965e5ea4984bac346ee1f9618027103e49ecc7e5b1d2aeb37799bcf82ed1bb7af73",
+          "sha256": "bc2f095035bdc876b5b49739b37be20b182931a8b4b523a7695c2e780bbe34e7",
+          "sha1": "82ef50abd4473af0749e6a14cd9d2cbe1ed7b65b",
+          "md5": "e8cca1e974e19333a7294143f5020d15"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "spring-boot-devtools-2.4.2-sources.jar",
+          "url": "spring-boot-devtools-2.4.2-sources.jar",
+          "size": 158886,
+          "sha512": "c58554df60a0b12b52e0379b93653a51492da972dfa43327949ffc97479e9ddced3968dc73e9f43e7a5f1fc628d2aacc3ad09912ec861f8263adc14f5f297b7a",
+          "sha256": "ef6454d3b80eb7923a398f23652a5724d9d790b5e45f23977ed895eff05f07ab",
+          "sha1": "cb828ca79a7d24e333825f9cc4e19d797acb9317",
+          "md5": "272c1210b82da1676bf3fd25de3f223d"
+        }
+      ]
+    }
+  ]
+}
