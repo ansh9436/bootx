@@ -6,5 +6,7 @@ import com.ansh.board.model.BoardVO;
 
 
 public interface BoardRepository extends JpaRepository<BoardVO, Long> {
+	
+	
 
 }
