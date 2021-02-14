@@ -42,9 +42,9 @@ public class BoardController {
     
     @GetMapping("/post/{no}")
     public String detail(@PathVariable("no") Long no, Model model) {
-        BoardDto boardDTO = boardService.getPost(no);
+        BoardDTO boardDTO = boardService.getPost(no);
 
-        model.addAttribute("boardDto", boardDTO);
+        model.addAttribute("boardDTO", boardDTO);
         return "board/detail.html";
     }
 
@@ -52,7 +52,7 @@ public class BoardController {
     public String edit(@PathVariable("no") Long no, Model model) {
         BoardDTO boardDTO = boardService.getPost(no);
 
-        model.addAttribute("boardDto", boardDTO);
+        model.addAttribute("boardDTO", boardDTO);
         return "board/update.html";
     }
 

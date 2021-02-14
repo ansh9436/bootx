@@ -6,18 +6,18 @@
 </head>
 <body>
 
-<h2 th:text="${boardDto.title}"></h2>
-<p th:inline="text">작성일 : [[${#temporals.format(boardDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
+<h2 th:text="${boardDTO.title}"></h2>
+<p th:inline="text">작성일 : [[${#temporals.format(boardDTO.createdDate, 'yyyy-MM-dd HH:mm')}]]</p>
 
-<p th:text="${boardDto.content}"></p>
+<p th:text="${boardDTO.content}"></p>
 
 <!-- 수정/삭제 -->
 <div>
-    <a th:href="@{'/post/edit/' + ${boardDto.id}}">
+    <a th:href="@{'/post/edit/' + ${boardDTO.id}}">
         <button>수정</button>
     </a>
 
-    <form id="delete-form" th:action="@{'/post/' + ${boardDto.id}}" method="post">
+    <form id="delete-form" th:action="@{'/post/' + ${boardDTO.id}}" method="post">
         <input type="hidden" name="_method" value="delete"/>
         <button id="delete-btn">삭제</button>
     </form>
