@@ -20,4 +20,5 @@ public abstract class TimeEntity {
 
     @LastModifiedDate
     private LocalDateTime modifiedDate;
+    
 }
