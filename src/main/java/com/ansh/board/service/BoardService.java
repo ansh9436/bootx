@@ -61,4 +61,28 @@ public class BoardService {
     public void deletePost(Long id) {
         boardRepository.deleteById(id);
     }
+    
+    @Transactional
+    public List<BoardDTO> searchPosts(String keyword) {
+        List<BoardVO> boardVOs = boardRepository.findByTitleContaining(keyword);
+        List<BoardDTO> boardDTOList = new ArrayList<>();
+
+        if (boardVOs.isEmpty()) return boardDTOList;
+
+        for (BoardVO vo : boardVOs) {
+            boardDTOList.add(this.convertEntityToDto(vo));
+        }
+
+        return boardDTOList;
+    }
+    
+    private BoardDTO convertEntityToDto(BoardVO vo) {
+        return BoardDTO.builder()
+                .id(vo.getId())
+                .title(vo.getTitle())
+                .content(vo.getContent())
+                .writer(vo.getWriter())
+                .createdDate(vo.getCreatedDate())
+                .build();
+    }
 }
