@@ -22,10 +22,13 @@ public class BoardController {
 
 
     @GetMapping("/")
-    public String list(Model model) {
-        List<BoardDTO> boardList = boardService.getBoardlist();
+    public String list(Model model, @RequestParam(value="page", defaultValue="1") Integer pageNum) {
+        List<BoardDTO> boardList = boardService.getBoardlist(pageNum);
+        Integer[] pageList = boardService.getPageList(pageNum);
 
         model.addAttribute("boardList", boardList);
+        model.addAttribute("pageList", pageList);
+        
         return "board/list.html";
     }
 
