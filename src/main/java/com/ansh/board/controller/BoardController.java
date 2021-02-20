@@ -62,6 +62,7 @@ public class BoardController {
 
     @PutMapping("/post/edit/{no}")
     public String update(BoardDTO boardDTO) {
+    	System.out.println("put_______________");
         boardService.savePost(boardDTO);
 
         return "redirect:/";
