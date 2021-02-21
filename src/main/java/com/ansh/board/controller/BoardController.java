@@ -31,6 +31,20 @@ public class BoardController {
         
         return "board/list.html";
     }
+    
+    @GetMapping("/board")
+    public String list(Model model,
+    					@RequestParam(value="searchType", defaultValue="1") String searchType,
+    					@RequestParam(value="searchKeyword") String searchKeyword,
+    					@RequestParam(value="page", defaultValue="1") Integer pageNum) {
+        List<BoardDTO> boardList = boardService.getBoardlist(pageNum);
+        Integer[] pageList = boardService.getPageList(pageNum);
+
+        model.addAttribute("boardList", boardList);
+        model.addAttribute("pageList", pageList);
+        
+        return "board/list.html";
+    }
 
     @GetMapping("/post")
     public String write() {
