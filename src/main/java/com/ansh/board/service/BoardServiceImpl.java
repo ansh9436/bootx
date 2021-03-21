@@ -5,13 +5,13 @@ import com.ansh.board.model.BoardVO;
 import com.ansh.board.repository.BoardRepository;
 import lombok.AllArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -19,29 +19,37 @@ import javax.transaction.Transactional;
 @AllArgsConstructor
 @Service
 public class BoardServiceImpl implements BoardService {
-    private BoardRepository boardRepository;
+    @Autowired
+	private BoardRepository boardRepository;
     
     private static final int BLOCK_PAGE_NUM_COUNT = 5;  // 블럭에 존재하는 페이지 번호 수
     private static final int PAGE_POST_COUNT = 5;       // 한 페이지에 존재하는 게시글 수
 
-    public List<BoardDTO> getBoardlist(Integer pageNum) {
-    	Page<BoardVO> page = boardRepository.findAll(PageRequest.of(pageNum - 1, 
-    										PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC, "id")));
-    	List<BoardVO> boardVOList = page.getContent();
-        List<BoardDTO> boardDTOList = new ArrayList<>();
+    public Page<BoardVO> getBoardlist(Pageable pageable, Map<String, Object> requestMap) {
+    	Page<BoardVO> boardList = null;
+    	int pageNum 			= Integer.parseInt(requestMap.get("pageNum").toString());
+    	String searchType 		= requestMap.get("searchType").toString();
+    	String searchKeyword 	= requestMap.get("searchKeyword").toString();
 
-        for(BoardVO vo : boardVOList) {
-            BoardDTO boardDTO = BoardDTO.builder()
-                    .id(vo.getId())
-                    .title(vo.getTitle())
-                    .content(vo.getContent())
-                    .writer(vo.getWriter())
-                    .createdDate(vo.getCreatedDate())
-                    .build();
-
-            boardDTOList.add(boardDTO);
-        }
-        return boardDTOList;
+    	pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 
+    			0 : pageNum - 1, PAGE_POST_COUNT, Sort.Direction.DESC, "id");
+    	
+    	if(searchKeyword.length() > 2) {
+    		switch (searchType) {
+	 	       case "1":
+	 	    	  boardList = boardRepository.findAllByTitleContaining(searchKeyword,pageable);
+	 	           break;
+	 	       case "2":
+	 	    	  boardList = boardRepository.findAllByContentContaining(searchKeyword,pageable);
+	 	           break;
+	 	       case "3":
+	 	    	  boardList = boardRepository.findAllByWriterContaining(searchKeyword,pageable);
+	 	           break;
+	 	   }
+    	} else {
+    		boardList = boardRepository.findAll(pageable);
+    	}
+    	return boardList;
     }
     
     public Integer[] getPageList(Integer curPageNum) {
@@ -84,36 +92,36 @@ public class BoardServiceImpl implements BoardService {
         return boardDTO;
     }
     
-    @Transactional
-    public Long savePost(BoardDTO boardDTO) {
-        return boardRepository.save(boardDTO.toEntity()).getId();
-    }
+//    @Transactional
+//    public Long savePost(BoardDTO boardDTO) {
+//        return boardRepository.save(boardDTO.toEntity()).getId();
+//    }
     
     @Transactional
     public void deletePost(Long id) {
         boardRepository.deleteById(id);
     }
     
-    public List<BoardDTO> searchPosts(String keyword) {
-        List<BoardVO> boardVOs = boardRepository.findByTitleContaining(keyword);
-        List<BoardDTO> boardDTOList = new ArrayList<>();
-
-        if (boardVOs.isEmpty()) return boardDTOList;
-
-        for (BoardVO vo : boardVOs) {
-            boardDTOList.add(this.convertEntityToDto(vo));
-        }
-
-        return boardDTOList;
-    }
+//    public List<BoardDTO> searchPosts(String keyword) {
+//        List<BoardVO> boardVOs = boardRepository.findAllByTitleContaining(keyword);
+//        List<BoardDTO> boardDTOList = new ArrayList<>();
+//
+//        if (boardVOs.isEmpty()) return boardDTOList;
+//
+//        for (BoardVO vo : boardVOs) {
+//            boardDTOList.add(this.convertEntityToDto(vo));
+//        }
+//
+//        return boardDTOList;
+//    }
     
-    private BoardDTO convertEntityToDto(BoardVO vo) {
-        return BoardDTO.builder()
-                .id(vo.getId())
-                .title(vo.getTitle())
-                .content(vo.getContent())
-                .writer(vo.getWriter())
-                .createdDate(vo.getCreatedDate())
-                .build();
-    }
+//    private BoardDTO convertEntityToDto(BoardVO vo) {
+//        return BoardDTO.builder()
+//                .id(vo.getId())
+//                .title(vo.getTitle())
+//                .content(vo.getContent())
+//                .writer(vo.getWriter())
+//                .createdDate(vo.getCreatedDate())
+//                .build();
+//    }
 }

@@ -16,15 +16,15 @@ public class BoardDTO {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
-    public BoardVO toEntity(){
-        BoardVO boardEntity = BoardVO.builder()
-                .id(id)
-                .writer(writer)
-                .title(title)
-                .content(content)
-                .build();
-        return boardEntity;
-    }
+//    public BoardVO toEntity(){
+//        BoardVO boardEntity = BoardVO.builder()
+//                .id(id)
+//                .writer(writer)
+//                .title(title)
+//                .content(content)
+//                .build();
+//        return boardEntity;
+//    }
 
     @Builder
     public BoardDTO(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
